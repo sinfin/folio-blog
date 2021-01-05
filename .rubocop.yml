@@ -1,0 +1,2 @@
+inherit_gem:
+  folio: lib/rubocop_config.yml
