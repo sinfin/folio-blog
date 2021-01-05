@@ -8,8 +8,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # development dependencies will be added by default to the :development group.
 gemspec
 
-gem "folio", github: "sinfin/folio", branch: "master"
-# gem "folio", path: "../folio"
+# gem "folio", github: "sinfin/folio", branch: "master"
+gem "folio", path: "../folio"
 
 # Declare any dependencies that are still in development here instead of in
 # your gemspec. These might include edge Rails or gems from your path or
