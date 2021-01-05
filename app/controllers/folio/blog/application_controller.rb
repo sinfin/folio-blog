@@ -1,9 +1,4 @@
 # frozen_string_literal: true
 
-module Folio
-  module Blog
-    class ApplicationController < ActionController::Base
-      protect_from_forgery with: :exception
-    end
-  end
+class Folio::Blog::ApplicationController < Folio::ApplicationController
 end

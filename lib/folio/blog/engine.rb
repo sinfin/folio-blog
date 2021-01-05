@@ -1,9 +1,23 @@
 # frozen_string_literal: true
 
-module Folio
-  module Blog
-    class Engine < ::Rails::Engine
-      isolate_namespace Folio::Blog
+class Folio::Blog::Engine < ::Rails::Engine
+  isolate_namespace Folio::Blog
+
+  config.generators do |g|
+    g.stylesheets false
+    g.javascripts false
+    g.helper false
+  end
+
+  config.assets.paths << self.root.join("app/cells")
+  config.assets.paths << self.root.join("vendor/assets/javascripts")
+  config.assets.paths << self.root.join("vendor/assets/bower_components")
+
+  initializer :append_migrations do |app|
+    unless app.root.to_s.include? root.to_s
+      config.paths["db/migrate"].expanded.each do |expanded_path|
+        app.config.paths["db/migrate"] << expanded_path
+      end
     end
   end
 end

@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root to: redirect("/folio-blog")
+  root to: redirect("/articles")
 
-  mount Folio::Engine => "/"
   mount Folio::Blog::Engine => "/"
+  mount Folio::Engine => "/"
 end
