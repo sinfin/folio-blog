@@ -1,9 +1,5 @@
 # frozen_string_literal: true
 
-module Folio
-  module Blog
-    class ApplicationRecord < ActiveRecord::Base
-      self.abstract_class = true
-    end
-  end
+class Folio::Blog::ApplicationRecord < Folio::ApplicationRecord
+  self.abstract_class = true
 end

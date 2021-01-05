@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_07_124052) do
+ActiveRecord::Schema.define(version: 2021_01_05_100713) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,6 +98,25 @@ ActiveRecord::Schema.define(version: 2020_12_07_124052) do
     t.jsonb "associations", default: {}
     t.text "data_for_search"
     t.index ["placement_type", "placement_id"], name: "index_folio_atoms_on_placement_type_and_placement_id"
+  end
+
+  create_table "folio_blog_articles", force: :cascade do |t|
+    t.string "title"
+    t.string "slug"
+    t.text "perex"
+    t.string "locale"
+    t.string "meta_title"
+    t.text "meta_description"
+    t.boolean "featured"
+    t.boolean "published"
+    t.datetime "published_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["featured"], name: "index_folio_blog_articles_on_featured"
+    t.index ["locale"], name: "index_folio_blog_articles_on_locale"
+    t.index ["published"], name: "index_folio_blog_articles_on_published"
+    t.index ["published_at"], name: "index_folio_blog_articles_on_published_at"
+    t.index ["slug"], name: "index_folio_blog_articles_on_slug"
   end
 
   create_table "folio_content_templates", force: :cascade do |t|

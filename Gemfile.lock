@@ -434,6 +434,7 @@ GEM
     ruby-vips (2.0.17)
       ffi (~> 1.9)
     ruby2_keywords (0.0.2)
+    rubyzip (2.3.0)
     safely_block (0.3.0)
       errbase (>= 0.1.1)
     sass-rails (6.0.0)
@@ -482,6 +483,8 @@ GEM
     tzinfo (1.2.9)
       thread_safe (~> 0.1)
     uber (0.1.0)
+    uglifier (4.2.0)
+      execjs (>= 0.3.0, < 3)
     unicode-display_width (1.7.0)
     unicode_utils (1.4.0)
     user_agent_parser (2.7.0)
@@ -515,6 +518,8 @@ DEPENDENCIES
   rubocop-rails
   rubocop-rails_config
   rubocop-rake
+  rubyzip
+  uglifier (>= 1.3.0)
 
 BUNDLED WITH
    2.1.4
