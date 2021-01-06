@@ -13,6 +13,10 @@ class Folio::Blog::Engine < ::Rails::Engine
   config.assets.paths << self.root.join("vendor/assets/javascripts")
   config.assets.paths << self.root.join("vendor/assets/bower_components")
 
+  config.folio_console_sidebar_runner_up_link_class_names = [
+    %w[Folio::Blog::Article]
+  ]
+
   initializer :append_migrations do |app|
     unless app.root.to_s.include? root.to_s
       config.paths["db/migrate"].expanded.each do |expanded_path|

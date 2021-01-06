@@ -1,0 +1,21 @@
+= form_header f
+
+= tabs [:content]
+
+.tab-content
+  = tab :content
+    .row
+      .col-md-auto
+        = react_picker(f, :cover_placement)
+      .col-md
+        = f.input :title
+        = f.input :slug
+        = f.input :perex
+        = f.input :locale
+        = f.input :meta_title
+        = f.input :meta_description
+        = f.input :featured
+        = f.input :published
+        = f.input :published_at
+
+= form_footer f
